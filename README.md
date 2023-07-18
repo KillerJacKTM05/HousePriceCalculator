@@ -6,3 +6,6 @@ Some data management and analysis has been done on Housing.csv . Example of fill
 
 # Version 0.2
 Corroleation heatmaps and corroleation management added, columns reorganized.
+
+# Version 0.3
+Train-test split, model training part have been added.
