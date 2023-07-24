@@ -1,10 +1,11 @@
 import pandas as pd
-import seaborn as sns 
 import matplotlib.pyplot as plt
-import numpy as np
+import math
 import sklearn
 from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
+from sklearn.metrics import r2_score 
+from sklearn.metrics import mean_squared_error
 
 housing_db_analysis = pd.read_csv('housing_reorganized.csv')
 #housing_db_analysis.info()
@@ -35,4 +36,12 @@ plt.plot(prediction_frame[:100])
 plt.legend(['Actual Value', 'Predicted Value'])
 plt.savefig("OutputFigure.png")
 
-#Evaluation Part will be added.
+#Evaluation
+test_score = r2_score(predictionTest, prediction_frame['Predicted Value'])
+mse = mean_squared_error(predictionTest, prediction_frame['Predicted Value'])
+rmse = math.sqrt((mse))
+with open("evaluation.txt", "a") as alias:
+    print("R^2 evaluation: {}%".format(round(test_score, 2) * 100), file=alias)
+    print("Mean Square Error: " + str(mse), file=alias)
+    print("Root Mean Square Error: " + str(rmse), file=alias)
+    pass

@@ -13,4 +13,6 @@ Train-test split, model training part have been added.
 # Version 0.4
 XGboost machine learning training and testing added. Some plotting charts and prediction csv file exported. With different dataset, same process can be done again.
 ML part is now in a different python file instead of jupyter notebook.
-Success rate evaluation will be added soon.
+
+# Version 0.5
+Evaluation part for the machine learning algorithm has been added.
